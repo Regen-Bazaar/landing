@@ -1,0 +1,20 @@
+node_modules/
+.vercel/
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.tar.gz
+.vercel
+
+# Internal / working materials — not for public repo
+docs/
+research/
+RESEARCH_BRIEF.md
+RESEARCH_BRIEF_2.md
+_legacy/
+screenshots/
+uploads/
+.claude/
+*.bak
+org-avatar.png

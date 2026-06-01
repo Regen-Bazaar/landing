@@ -1,0 +1,12 @@
+_legacy/
+research/
+screenshots/
+uploads/
+*.md
+*.tar.gz
+.DS_Store
+.claude/
+.env
+.env.local
+node_modules/
+.vercel/

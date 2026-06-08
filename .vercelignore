@@ -4,6 +4,7 @@ screenshots/
 uploads/
 *.md
 *.tar.gz
+*.bak
 .DS_Store
 .claude/
 .env

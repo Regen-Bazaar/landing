@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /_legacy/
 
-Sitemap: https://regenbazaar.com/sitemap.xml
+Sitemap: https://www.regenbazaar.com/sitemap.xml

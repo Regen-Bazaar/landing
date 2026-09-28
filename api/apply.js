@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
     if (parts.length || acdm.length) {
       lines.push(`\n<b>Action ${i + 1}</b>`);
       parts.forEach((p) => lines.push(esc(p)));
-      if (acdm.length) lines.push("<i>ACDM — " + esc(acdm.join(" · ")) + "</i>");
+      if (acdm.length) lines.push("<i>Complexity: " + esc(acdm.join(" · ")) + "</i>");
     }
   });
 

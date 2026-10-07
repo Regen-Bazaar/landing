@@ -35,13 +35,14 @@ module.exports = async (req, res) => {
     if (a.area) parts.push(`area: ${clip(a.area, 120)}`);
     if (a.proof) parts.push(`proof: ${clip(a.proof, 300)}`);
     const acdm = [];
-    ["skills", "resources", "scale", "permits", "access"].forEach((k) => {
+    // hours/hourValue/spent: current form; skills..access: older cached form
+    ["hours", "hourValue", "spent", "skills", "resources", "scale", "permits", "access"].forEach((k) => {
       if (a[k]) acdm.push(`${k}: ${clip(a[k], 40)}`);
     });
     if (parts.length || acdm.length) {
       lines.push(`\n<b>Action ${i + 1}</b>`);
       parts.forEach((p) => lines.push(esc(p)));
-      if (acdm.length) lines.push("<i>Complexity: " + esc(acdm.join(" · ")) + "</i>");
+      if (acdm.length) lines.push("<i>What it took: " + esc(acdm.join(" · ")) + "</i>");
     }
   });
 

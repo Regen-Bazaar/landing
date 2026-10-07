@@ -1,12 +1,12 @@
 # Regen Bazaar — Marketing Site
 
-Public landing site for [Regen Bazaar](https://www.regenbazaar.com), a marketplace that turns verified real-world impact (RWI) into a tradable on-chain asset class — for NGOs and communities to tokenize impact, and for investors to fund it.
+Public landing site for [Regen Bazaar](https://www.regenbazaar.com), a marketplace that turns verified real-world impact (RWI) into a tradable on-chain asset class: for creators (NGOs, communities and individuals) to tokenize impact, and for buyers to purchase it.
 
 **Live:** https://www.regenbazaar.com
 
 ## Pages
 - `index.html` — home
-- `investors.html` — investor thesis, market, $REBAZ
+- `investors.html`: investor thesis, market, traction
 - `ngos.html` — for NGOs & communities (how to tokenize impact)
 
 ## Stack

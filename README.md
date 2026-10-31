@@ -11,22 +11,27 @@ Public landing site for [Regen Bazaar](https://www.regenbazaar.com), a marketpla
 
 ## Stack
 - Static HTML + CSS (`investors.css`, `pages.css`), assets in `assets/`
-- Vercel serverless functions in `api/` (Telegram-backed contact & application forms)
-- Deployed on Vercel; config in `vercel.json`
+- Cloudflare Pages Functions in `functions/` (Telegram-backed contact & application forms)
+- Hosted on Cloudflare Pages (project `regenbazaar`); headers in `_headers`, rewrites in `_redirects`
+- `api/`, `vercel.json`, `.vercelignore`: old Vercel setup, kept only as rollback until mid-December 2026
+
+## Deploy
+```bash
+CLOUDFLARE_API_TOKEN=... ./scripts/cf-deploy.sh
+```
+The script copies the public files to `dist/` and runs `wrangler pages deploy` (Functions come from `functions/`). Secrets live in the Pages project settings, not in the repo.
 
 ## Local development
-This is a static site with serverless functions. To run with the Vercel CLI:
-
 ```bash
-npm i -g vercel       # if not installed
-cp .env.example .env  # fill in Telegram values for the api/ functions
-vercel dev            # serves the site + api/ locally
+cp .env.example .dev.vars   # fill in Telegram values for the functions
+BUILD_ONLY=1 ./scripts/cf-deploy.sh     # builds dist/ without deploying
+npx wrangler@4.143.0 pages dev dist   # serves the site + functions/ locally
 ```
 
-The static pages also open directly in a browser, but the `/api/contact` and `/api/apply` endpoints require the Vercel runtime and the environment variables below.
+The static pages also open directly in a browser, but `/api/contact` and `/api/apply` need the Pages Functions runtime and the environment variables below.
 
 ## Environment variables
-See `.env.example`. The `api/` functions read everything from the environment — no secrets are committed.
+See `.env.example`. The `functions/` handlers read everything from the environment — no secrets are committed.
 
 | Variable | Purpose |
 |----------|---------|

@@ -18,3 +18,6 @@ uploads/
 .claude/
 *.bak
 org-avatar.png
+dist/
+.wrangler/
+.dev.vars

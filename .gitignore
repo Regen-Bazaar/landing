@@ -19,3 +19,4 @@ uploads/
 *.bak
 org-avatar.png
 dist/
+.wrangler/
